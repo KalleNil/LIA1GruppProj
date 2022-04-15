@@ -27,9 +27,11 @@ function newAdForm(){
     let titleInput = document.getElementById('titleId').value;
     let categoryInput = document.getElementById('kategoriId').value;
     let priceInput = document.getElementById('priceId').value;
+    let beskrivningInput = document.getElementById('beskrivningId').value;
+
 
     document.getElementById("annonser").innerHTML += 
-    "<a class='card' href='#!'><div id='kort"+idNumber+"Front' class='front'><h3>"+titleInput+"</h3><p>"+categoryInput+"</p><br> <p class='olle'>"+priceInput+"</p></div><div class='back'><div id='kort"+idNumber+"Back'><p>Klicka på knappen högst upp</p></div>";
+    "<a class='card' href='#!'><div id='kort"+idNumber+"Front' class='front'><h3>"+titleInput+"</h3><p>"+categoryInput+"</p><br> <p class='olle'>"+priceInput+"kr</p></div><div class='back'><div id='kort"+idNumber+"Back'><p>"+beskrivningInput+"</p></div>";
 
     document.getElementById('kort'+idNumber+'Front').style.backgroundImage = "url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/France-003324_-_Mona_Lisa_%2816236519171%29.jpg/250px-France-003324_-_Mona_Lisa_%2816236519171%29.jpg)";
 
