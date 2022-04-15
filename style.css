@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap%27');
+
 *, *:before, *:after {
     box-sizing: border-box;
   }
@@ -159,45 +161,20 @@
     transform: rotateY(0deg);
   }
   
-  .button {
-    transform: translateZ(40px);
+  button {
+    background-color: #fff;
+    margin: 20px;
+    width:150px;
+    height: 40px;
+    border-radius: 7px;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+button:hover {
     cursor: pointer;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    font-weight: bold;
-    color: rgb(212, 24, 24);
-    padding: 0.5em 1em;
-    border-radius: 100px;
-    font: inherit;
-    border: none;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: 300ms ease;
-  }
-  .button:before {
-    transition: 300ms ease;
-    position: absolute;
-    display: block;
-    content: "";
-    transform: translateZ(-40px);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    height: calc(100% - 20px);
-    width: calc(100% - 20px);
-    border-radius: 100px;
-    left: 10px;
-    top: 16px;
-  }
-  .button:hover {
-    transform: translateZ(55px);
-  }
-  .button:hover:before {
-    transform: translateZ(-55px);
-  }
-  .button:active {
-    transform: translateZ(20px);
-  }
-  .button:active:before {
-    transform: translateZ(-20px);
-    top: 12px;
-  }
+    opacity: 90%;
+    font-weight: 500;
+}

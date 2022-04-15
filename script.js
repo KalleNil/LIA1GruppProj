@@ -290,10 +290,35 @@ function marsRover3() {
 let idNumber = 6;
 function newAd(){
     idNumber += 1;
+    let annonsDisplay = document.getElementById('annons')
+    if (annonsDisplay.style.display === "none") {
+        annonsDisplay.style.display = "block";
+    } else {
+        annonsDisplay.style.display = "none";
+    }  
 
+    /*document.getElementById("annonser").innerHTML += 
+    "<a class='card' href='#!'><div id='kort"+idNumber+"Front' class='front'><p>Klicka på knappen högst upp</p></div><div class='back'><div id='kort"+idNumber+"Back'><p>Klicka på knappen högst upp</p></div>";
+    */
+
+
+}
+
+function newAdForm(){
+    let annonsDisplay = document.getElementById('annons');
+    if (annonsDisplay.style.display === "none") {
+        annonsDisplay.style.display = "block";
+    } else {
+        annonsDisplay.style.display = "none";
+    }
+    
+    let titleInput = document.getElementById('titleId').value;
 
     document.getElementById("annonser").innerHTML += 
-    "<a class='card' href='#!'><div id='kort"+idNumber+"Front' class='front'><p>Klicka på knappen högst upp</p></div><div class='back'><div id='kort"+idNumber+"Back'><p>Klicka på knappen högst upp</p></div>";
+    "<a class='card' href='#!'><div id='kort"+idNumber+"Front' class='front'><p>"+titleInput+"</p></div><div class='back'><div id='kort"+idNumber+"Back'><p>Klicka på knappen högst upp</p></div>";
+
+    
+
 }
 
 

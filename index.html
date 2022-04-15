@@ -9,9 +9,35 @@
 </head>
 <body>
   <p class="names"> <em>Kalle Nilsson, Sara Holmquist, Hampus Lindström</em></p>  
-    
     <div class="content" id="annonser">
-        <button id="annons" onclick="newAd()">lägg till annons</button>
+        <button id="annonsKnapp" onclick="newAd()">ANNONS</button>
+        <form onsubmit="newAdForm();return false">
+            <div id="annons" style="display: none">
+                <div>
+                    <label for="title" >Titel:
+                        <br>
+                        <input type="text" name="title" id="titleId" placeholder="Tavla" title="title" required>
+                    </label>
+                </div>
+                <div>
+                    <label for="Pris" >Pris:
+                        <br>
+                        <input type="text" name="price" id="priceId" placeholder="100kr" title="pris" required>
+                    </label>
+                </div>
+                <div>
+                    <label for="kategori" >Kategori:
+                        <br>
+                        <input type="text" name="kategori" id="kategoriId" placeholder="Tavlor" title="kategori" required>
+                    </label>
+                </div>
+                <br>
+                <div>
+                    <input type="submit" value="Skicka">
+                </div>
+                
+            </div>
+        </form>
         <h3 class="description">Klicka på ett kort för mer information.</h3>
         
         <a class="card" href="#!">
