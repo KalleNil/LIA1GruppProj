@@ -88,12 +88,11 @@
   
   .front,
   .back {
-    display: flex;
     border-radius: 6px;
     background-position: center;
     background-size: cover;
     text-align: center;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
     position: absolute;
     height: 100%;
@@ -177,4 +176,11 @@ button:hover {
     cursor: pointer;
     opacity: 90%;
     font-weight: 500;
+}
+.olle{
+  color: red;
+}
+
+.mona{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/France-003324_-_Mona_Lisa_%2816236519171%29.jpg/250px-France-003324_-_Mona_Lisa_%2816236519171%29.jpg");"
 }
