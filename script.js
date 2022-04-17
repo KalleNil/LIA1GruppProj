@@ -1,3 +1,16 @@
+//produkterna/annonserna
+const annonser = [
+    { id: 1, title: "Tavla",category: "Konst", description: "En väldigt unik tavla från Antwerp", price: 123, url:  "https://cdn.newport.se/gallery/4142/goc-fageltavla-laura-2__fullsize.jpg"},
+    { id: 2, title: "Ost",category: "Konst", description: "En välsmakande ost gjord på get", price: 456 },
+    { id: 3, title: "Skinka",category: "Konst", description: "Rökt skinka från Dalarna", price: 789 },
+];
+//skapar en annons för alla produkterna
+for(let i = 0; i<annonser.length; i++){
+    document.getElementById("annonser").innerHTML += 
+    "<a class='card' href='#!'><div id='kort"+annonser[i].id +"Front' class='front'><h3>"+annonser[i].title+"</h3><p>hej</p><br> <p class='olle'>"+annonser[i].price+"kr</p></div><div class='back'><div id='kort"+annonser[i].id+"Back'><p>"+annonser[i].description+"</p> </div> <button>KÖP</button>";
+    document.getElementById('kort'+annonser[i].id+'Front').style.backgroundImage = "url("+annonser[i].url+")";
+    
+}
 //id:t på annonskortet
 let idNumber = 6;
 function newAd(){
@@ -37,6 +50,7 @@ function newAdForm(){
 
 }
 
+//skall bytas ut mot en annna api pga tomt innehåll
 function testApi(){
     let xhr = new XMLHttpRequest();
 
