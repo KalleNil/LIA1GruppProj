@@ -12,7 +12,7 @@
   <button onclick="testApi()">test</button> 
     <div class="content" id="annonser">
         <button id="annonsKnapp" onclick="newAd()">ANNONS</button>
-        <form onsubmit="newAdForm();return false">
+        <form onsubmit="newAdForm(); return false">
             <div id="annons" style="display: none">
                 <div>
                     <label for="title" >Titel:
@@ -38,38 +38,31 @@
                       <input type="text" name="beskrivning" id="beskrivningId" placeholder="Produkten är i gott skick" title="kategori" required>
                   </label>
                 </div>
-                <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                <p><input type="file"  accept="image/*" name="image" id="file" onchange="loadFile()" style="display: none;"></p>
                 <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
                 <p><img id="output" width="200" /></p>
-
-                <script>
-                  //låter oss skapa en URL av våran fil vi laddar upp
-                  var loadFile = function(event) {
-                  var image = document.getElementById('output');
-                  var hej = document.getElementById('kort1Front');
-                  hej.style.backgroundImage = "url("+URL.createObjectURL(event.target.files[0])+")";
-                  
-                };
-                </script>
-
                 <br>
                 <div>
                     <input type="submit" value="Skicka">
                 </div>
-                
             </div>
         </form>
-        <img id="testar" src="https://thumbs.dreamstime.com/b/swedish-text-hello-lettering-calligraphy-vector-illustration-hej-swedish-text-hello-lettering-vector-illustration-element-126696167.jpg" alt="">
         <h3 class="description">Klicka på ett kort för mer information.</h3>
         
        <!--annonskort-->
         <a class="card" href="#!">
           <div id="kort1Front" class="front mona">
-            <p>Klicka på knappen högst upp</p>
+            <p>Mona Lisa</p>
           </div>
           <div class="back">
             <div id="kort1Back">
               <p>Klicka på knappen högst upp</p>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>      
+              <button>KÖP</button>
             </div>
           </div></a><a class="card" href="#!">
           <div id="kort2Front" class="front mona">
@@ -112,9 +105,6 @@
               <p>Klicka på knappen högst upp</p>
             </div>
           </div></a>
-      
-
-      
     </div>
     <script src="script.js"></script>
 </body>

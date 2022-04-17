@@ -32,7 +32,6 @@ function newAdForm(){
 
     document.getElementById("annonser").innerHTML += 
     "<a class='card' href='#!'><div id='kort"+idNumber+"Front' class='front'><h3>"+titleInput+"</h3><p>"+categoryInput+"</p><br> <p class='olle'>"+priceInput+"kr</p></div><div class='back'><div id='kort"+idNumber+"Back'><p>"+beskrivningInput+"</p></div>";
-
     document.getElementById('kort'+idNumber+'Front').style.backgroundImage = "url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/France-003324_-_Mona_Lisa_%2816236519171%29.jpg/250px-France-003324_-_Mona_Lisa_%2816236519171%29.jpg)";
     
 
@@ -56,6 +55,13 @@ function testApi(){
     }  
 
 }
+
+//låter oss skapa en URL av våran fil vi laddar upp  
+function loadFile() {
+    var annonsBild = document.getElementById('kort1Front');
+    annonsBild.style.backgroundImage = "url("+URL.createObjectURL(event.target.files[0])+")";
+    
+  };
 
 
 
