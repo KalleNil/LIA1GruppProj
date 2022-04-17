@@ -2,7 +2,7 @@
 const annonser = [
     { id: 1, title: "Tavla",category: "Konst", description: "En väldigt unik tavla från Antwerp", price: 123, url:  "https://cdn.newport.se/gallery/4142/goc-fageltavla-laura-2__fullsize.jpg"},
     { id: 2, title: "Volvo XC40",category: "Fordon", description: "En robust och pålitlig bil", price: 450000, url: "https://images.ctfassets.net/x7m88j6y655h/4GtEYKDIZQDFBXQTXIX6Xi/2f914f12f1ed3b2cf1e657539ee2bf21/volvo.jpg"},
-    { id: 3, title: "Villa",category: "Hus", description: "Ett nybyggt hus i en modern stil", price: 4000000 , url: "https://www.trivselhus.se/imagevault/publishedmedia/p5nyji3581eajlmtwv1t/trivselhus_hemma_hos_villa_mariestad_0758.jpg"},
+    { id: 3, title: "Villa",category: "Fastighet", description: "En nybyggd villa i modern stil", price: 4000000 , url: "https://www.trivselhus.se/imagevault/publishedmedia/p5nyji3581eajlmtwv1t/trivselhus_hemma_hos_villa_mariestad_0758.jpg"},
 ];
 //skapar en annons för alla produkterna
 for(let i = 0; i<annonser.length; i++){
@@ -28,7 +28,8 @@ function newAd(){
 
 
 }
-
+ 
+let denNyaAnnonsensIndex = annonser.length;
 function newAdForm(){
     let annonsDisplay = document.getElementById('annons');
     if (annonsDisplay.style.display === "none") {
@@ -41,11 +42,24 @@ function newAdForm(){
     let categoryInput = document.getElementById('kategoriId').value;
     let priceInput = document.getElementById('priceId').value;
     let beskrivningInput = document.getElementById('beskrivningId').value;
-
-
+    let imageInput = document.getElementById('bildId').value;
+    //sätter nya id:et
+    idNewAnnons = annonser.length +1;
+    //lägger till en ny produkt i annons arrayen
+    annonser.push({id: idNewAnnons, title: titleInput, category: categoryInput, description: beskrivningInput, price: priceInput, url: imageInput})
+   
+   /* for(let i = 0; i<annonser.length; i++){
+        document.getElementById("annonser").innerHTML += 
+        "<a class='card' href='#!'><div id='kort"+annonser[i].id +"Front' class='front'><h3>"+annonser[i].title+"</h3><p>"+annonser[i].category+"</p><br> <p class='olle'>"+annonser[i].price+"kr</p></div><div class='back'><div id='kort"+annonser[i].id+"Back'><p>"+annonser[i].description+"</p> </div> <button>KÖP</button>";
+        document.getElementById('kort'+annonser[i].id+'Front').style.backgroundImage = "url("+annonser[i].url+")";
+        
+    }
+    */
+    //visar den nya annonsen
     document.getElementById("annonser").innerHTML += 
-    "<a class='card' href='#!'><div id='kort"+idNumber+"Front' class='front'><h3>"+titleInput+"</h3><p>"+categoryInput+"</p><br> <p class='olle'>"+priceInput+"kr</p></div><div class='back'><div id='kort"+idNumber+"Back'><p>"+beskrivningInput+"</p></div>";
-    document.getElementById('kort'+idNumber+'Front').style.backgroundImage = "url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/France-003324_-_Mona_Lisa_%2816236519171%29.jpg/250px-France-003324_-_Mona_Lisa_%2816236519171%29.jpg)";
+    "<a class='card' href='#!'><div id='kort"+annonser[denNyaAnnonsensIndex].id +"Front' class='front'><h3>"+annonser[denNyaAnnonsensIndex].title+"</h3><p>"+annonser[denNyaAnnonsensIndex].category+"</p><br> <p class='olle'>"+annonser[denNyaAnnonsensIndex].price+"kr</p></div><div class='back'><div id='kort"+annonser[denNyaAnnonsensIndex].id+"Back'><p>"+annonser[denNyaAnnonsensIndex].description+"</p> </div> <button>KÖP</button>";
+    document.getElementById('kort'+annonser[denNyaAnnonsensIndex].id+'Front').style.backgroundImage = "url("+annonser[denNyaAnnonsensIndex].url+")";
+    
     
 
 }
@@ -65,7 +79,14 @@ function testApi(){
         
         console.log(xhr.response);
 
-        document.getElementById('kort6Front').style.backgroundImage = "url("+xhr.response[idNumber].url+")";
+        //lägger in bilden från api:n som bakgrund för annonserna
+        for(let i = 0; i<annonser.length; i++){
+
+            document.getElementById('kort'+annonser[i].id+'Front').style.backgroundImage = "url("+xhr.response[idNumber].url+")";
+
+        }
+
+        
     }  
 
 }
